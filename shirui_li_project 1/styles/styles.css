@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lavender;
+}
+
+/*Navbar*/
+nav {
+    background-color: lightslategray;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(200px, 35vw, 400px);
+    height: clamp(200px, 35vw, 400px);
+    z-index: 100;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+    font-size: clamp(12px, 3vw, 24px);
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a::before {
+    content: "→ ";
+    color: white;
+}
+
+
+nav ul li a:hover {
+    background-color: lavender;
+    transform: scale(1.2);
+}
+
+nav ul li a.active {
+    background-color: lightblue;
+}
+
+.content, header, section {
+    margin-left: 450px;
+    margin-top: 75px;
+    padding: 20px;
+    max-width: 800px;
+    text-align: left;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-items: center;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+
+/* for phone */
+@media (max-width: 600px) {
+    nav {
+        width: 100%;
+        height: 60px;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        width: auto;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .content, header, section {
+        margin-left: 0;
+        max-width: 100%;
+        padding-bottom: 70px;
+    }
+
+    .content img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
